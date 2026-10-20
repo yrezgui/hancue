@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-typeface="serif">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HanCue adds small Latin reading cues above Hangul. Explore three Nanum typefaces, try your own Korean, and download the font.">
+  <meta name="theme-color" content="#f6f2e9">
+  <title>HanCue — Hangul, with a little help above.</title>
+  <link rel="preload" href="fonts/HanCueText-Regular.woff2?v=0.3.1" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/HanCueSerif-Regular.woff2?v=0.3.1" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=0.3.5">
+  <script src="app.js?v=0.3.2" defer></script>
+</head>
+<body>
+  <header class="site-header page-width">
+    <a class="wordmark" href="#" aria-label="HanCue home">HanCue<span class="red-square" aria-hidden="true"></span></a>
+    <nav aria-label="Main navigation"><a href="#playground">Try it</a><a href="#about">How it works</a><a href="#download">Download</a></nav>
+    <span class="header-caption">A KOREAN READING FONT<span aria-hidden="true"></span></span>
+  </header>
+
+  <main>
+    <section class="hero page-width" aria-labelledby="hero-title">
+      <div class="hero-specimen">
+        <span class="registration-mark" aria-hidden="true"></span>
+        <span class="font-specimen hero-hangul" lang="ko">한글</span>
+        <span class="registration-mark" aria-hidden="true"></span>
+      </div>
+      <h1 id="hero-title">Hangul, with a little help above.</h1>
+      <p class="hero-description">A Korean font with Latin reading cues built in.</p>
+      <div class="hero-actions"><a class="button button-ink" href="#playground">Try it <span aria-hidden="true">↗</span></a><a class="button" href="#about">How it works</a><a class="button" href="#download">Download <span aria-hidden="true">↓</span></a></div>
+      <fieldset class="typeface-picker">
+        <legend>CHOOSE YOUR TYPEFACE</legend>
+        <div class="typeface-options">
+          <label><input type="radio" name="typeface" value="serif" data-typeface-option checked><span class="typeface-name serif-label">Serif</span><span class="typeface-source">Nanum Myeongjo</span></label>
+          <label><input type="radio" name="typeface" value="sans" data-typeface-option><span class="typeface-name sans-label">Sans</span><span class="typeface-source">Nanum Gothic</span></label>
+          <label><input type="radio" name="typeface" value="script" data-typeface-option><span class="typeface-name script-label">Script</span><span class="typeface-source">Nanum Pen Script</span></label>
+        </div>
+      </fieldset>
+    </section>
+
+    <section id="playground" class="playground page-width section-rule" aria-label="Font playground">
+      <aside class="margin-note">
+        <h2 class="eyebrow"><span class="red-square" aria-hidden="true"></span>TYPE KOREAN.<br>SEE THE CUES.</h2>
+        <span class="short-rule" aria-hidden="true"></span>
+        <p>Enter your own text to see HanCue in action. A little Latin guide sits above each syllable.</p>
+        <p class="font-status" id="font-status" role="status">Loading Nanum Myeongjo…</p>
+      </aside>
+
+      <div class="playground-main">
+        <div class="specimen-frame">
+          <div class="notebook-guides" aria-hidden="true"></div>
+          <div id="specimen-text" class="font-specimen specimen-text" lang="ko" aria-label="Font preview">한국어</div>
+          <span id="empty-message" class="empty-message" hidden>Your next word starts here.</span>
+        </div>
+        <div class="input-line">
+          <label class="sr-only" for="korean-text">Korean text to preview</label>
+          <textarea id="korean-text" lang="ko" rows="1" placeholder="Type or paste Korean here…" spellcheck="false">한국어</textarea>
+          <button id="clear" class="icon-button" aria-label="Clear text" title="Clear text">×</button>
+        </div>
+        <div class="specimen-controls">
+          <div class="size-control"><label for="font-size">Font size</label><input id="font-size" type="range" min="32" max="160" value="120"><output id="size-value" for="font-size">120 <span>px</span></output></div>
+          <label class="switch-label"><span>Reading cues</span><input id="show-cues" type="checkbox" checked><span class="switch" aria-hidden="true"></span></label>
+        </div>
+        <div class="playground-meta"><span id="character-count">3 characters</span><div><button id="reset" class="text-button">Reset</button><span aria-hidden="true">/</span><button id="copy" class="text-button">Copy Korean text</button></div></div>
+      </div>
+
+      <aside class="examples">
+        <h3 class="eyebrow"><span class="red-square" aria-hidden="true"></span>EXAMPLES</h3>
+        <div class="sample-list" role="group" aria-label="Example words">
+          <button class="sample" data-sample="한글" aria-label="Try 한글"><span class="font-specimen" lang="ko">한글</span></button>
+          <button class="sample active" data-sample="한국어" aria-label="Try 한국어" aria-pressed="true"><span class="font-specimen" lang="ko">한국어</span></button>
+          <button class="sample" data-sample="감사합니다" aria-label="Try 감사합니다"><span class="font-specimen" lang="ko">감사합니다</span></button>
+        </div>
+        <p class="example-note">Choose a word to try.</p>
+      </aside>
+    </section>
+
+    <section id="about" class="about page-width section-rule" aria-label="About HanCue">
+      <article class="about-column"><span class="section-number">01</span><h2>What is HanCue?</h2><p>New letters can feel like a whole new world. HanCue puts a familiar little guide above the Hangul, helping you find your way into Korean, one syllable at a time.</p><p>The cues are part of the font itself. Your text stays Korean when you type, copy, and share it.</p><p class="quiet-note">HanCue adds Latin reading cues on top of Nanum Myeongjo, Nanum Gothic, and Nanum Pen Script.</p></article>
+      <article class="about-column"><span class="section-number">02</span><h2>How it works</h2><p>Each Hangul syllable has its own Latin cue built into the font. Read along one block at a time, like <span lang="ko">한국어</span> → <i>han · guk · eo</i>.</p><p>Choose a typeface, enter Korean, and follow the cues above.</p><div class="mini-examples"><div><span class="font-specimen" lang="ko">한글</span><p>A little guide<br>above each syllable.</p></div><div><span class="font-specimen" lang="ko">한국어</span><p>One block,<br>one reading cue.</p></div></div></article>
+    </section>
+
+    <section class="reading-notes page-width">
+      <details><summary>Getting to know the reading cues <span aria-hidden="true">+</span></summary><div class="reading-notes-content"><p>The cues use Revised Romanization letter values: <i>eo</i>, <i>eu</i>, and <i>ui</i> are Korean reading conventions, rather than English phonetic spellings. Each syllable is shown independently. Pronunciation in connected speech can differ from these cues.</p><p>All three typefaces cover 11,172 modern Hangul syllables. Standalone jamo and historical Hangul have no cues.</p><a href="https://www.korean.go.kr/front_eng/roman/roman_01.do" target="_blank" rel="noopener noreferrer">Explore Korean romanization ↗</a></div></details>
+    </section>
+
+    <section id="download" class="download page-width" aria-labelledby="download-title">
+      <div class="download-kicker eyebrow"><span class="red-square" aria-hidden="true"></span>GET<br>HANCUE</div>
+      <div class="download-content">
+        <div class="download-top">
+          <div><h2 id="download-title">Download HanCue</h2><p>Free to use. Open to everyone.</p></div>
+          <a class="download-button download-all" href="fonts/HanCue-All.zip?v=0.3.1" download="HanCue-All.zip" aria-label="Download all three fonts and licenses (ZIP)"><span class="download-icon" aria-hidden="true">↓</span><span>Download all .zip<small>All three fonts + licenses</small></span></a>
+        </div>
+        <div class="download-selection">
+          <fieldset class="typeface-picker download-picker">
+            <legend>CHOOSE A FONT TO DOWNLOAD</legend>
+            <div class="typeface-options">
+              <label><input type="radio" name="download-typeface" value="serif" data-typeface-option checked><span class="typeface-name serif-label">Serif</span><span class="typeface-source">Nanum Myeongjo</span></label>
+              <label><input type="radio" name="download-typeface" value="sans" data-typeface-option><span class="typeface-name sans-label">Sans</span><span class="typeface-source">Nanum Gothic</span></label>
+              <label><input type="radio" name="download-typeface" value="script" data-typeface-option><span class="typeface-name script-label">Script</span><span class="typeface-source">Nanum Pen Script</span></label>
+            </div>
+          </fieldset>
+          <div class="download-buttons">
+            <a class="download-button" data-download-format="ttf" href="fonts/HanCueSerif-Regular.ttf?v=0.3.1" download><span class="download-icon" aria-hidden="true">↓</span><span>Download .ttf<small>For your computer</small></span></a>
+            <a class="download-button" data-download-format="woff2" href="fonts/HanCueSerif-Regular.woff2?v=0.3.1" download><span class="download-icon" aria-hidden="true">↓</span><span>Web font .woff2<small>For your website</small></span></a>
+          </div>
+        </div>
+        <p class="selected-download" aria-live="polite">YOUR TYPEFACE <span data-selected-font>Serif / Nanum Myeongjo</span></p>
+        <div class="font-facts"><div><strong>11,172</strong><span>modern syllables</span></div><div><strong>Three voices</strong><span>serif, sans & script</span></div><div><strong>Free & open source</strong><span>for learning and creating</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="font-credits" class="font-credits page-width" aria-labelledby="font-credits-title">
+    <h2 id="font-credits-title">The typefaces beneath the cues</h2>
+    <p>HanCue builds its Latin reading cues on top of three existing Nanum typefaces. The original letterforms are preserved; the annotated versions are distributed as HanCue Serif, HanCue Sans, and HanCue Script.</p>
+    <ul>
+      <li><a href="https://fonts.google.com/specimen/Nanum+Myeongjo" target="_blank" rel="noopener noreferrer">Nanum Myeongjo</a> <span>— original typeface designed by FONTRIX.</span> <a class="license-link" href="fonts/NanumMyeongjo-OFL.txt">License</a></li>
+      <li><a href="https://fonts.google.com/specimen/Nanum+Gothic" target="_blank" rel="noopener noreferrer">Nanum Gothic</a> <span>— original typeface designed by Sandoll Communications Inc.</span> <a class="license-link" href="fonts/NanumGothic-OFL.txt">License</a></li>
+      <li><a href="https://fonts.google.com/specimen/Nanum+Pen+Script" target="_blank" rel="noopener noreferrer">Nanum Pen Script</a> <span>— original typeface designed by Sandoll Communications Inc.</span> <a class="license-link" href="fonts/NanumPenScript-OFL.txt">License</a></li>
+    </ul>
+    <p class="license-note">Original fonts © NHN Corporation. Font files, including HanCue’s additions, are licensed under the <a href="https://openfontlicense.org/" target="_blank" rel="noopener noreferrer">SIL Open Font License 1.1</a>. Original copyright notices and the full license accompany every download.</p>
+  </section>
+  <footer class="site-footer page-width"><span>HanCue<span class="red-square" aria-hidden="true"></span></span><p>Created by <a href="https://github.com/yrezgui" target="_blank" rel="noopener noreferrer">@yrezgui</a> with AI, inspired by <a href="https://furifont.antfu.me/" target="_blank" rel="noopener noreferrer">Furifont</a>.</p><div><a href="#font-credits">Font credits</a><a id="font-license" href="fonts/NanumMyeongjo-OFL.txt">Font license</a></div></footer>
+</body>
+</html>
